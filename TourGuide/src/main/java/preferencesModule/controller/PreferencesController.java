@@ -3,7 +3,7 @@ package preferencesModule.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import preferencesModule.service.IPreferencesService;
@@ -19,7 +19,7 @@ public class PreferencesController {
     @Autowired
     IPreferencesService preferencesService;
 
-    @RequestMapping("/getPrice")
+    @GetMapping("/getPrice")
     public List<Provider> getPrice(@RequestParam String apiKey, @RequestParam String attractionId, @RequestParam int adults, @RequestParam int children, @RequestParam int nightsStay, @RequestParam int rewardsPoints) {
         logger.debug("Request getPrice : ApiKey=" + apiKey + " - attractionId=" + attractionId + " - adults=" + adults + " - children=" + children + " - nightsStay=" + nightsStay + " - rewardsPoints=" + rewardsPoints);
         List<Provider> providers = preferencesService.getPrice(apiKey, UUID.fromString(attractionId), adults, children, nightsStay, rewardsPoints);
