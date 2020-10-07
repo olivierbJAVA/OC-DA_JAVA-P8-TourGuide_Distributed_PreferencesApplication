@@ -17,7 +17,7 @@ public class PreferencesController {
     private Logger logger = LoggerFactory.getLogger(PreferencesController.class);
 
     @Autowired
-    IPreferencesService preferencesService;
+    private IPreferencesService preferencesService;
 
     @GetMapping("/getPrice")
     public List<Provider> getPrice(@RequestParam String apiKey, @RequestParam String attractionId, @RequestParam int adults, @RequestParam int children, @RequestParam int nightsStay, @RequestParam int rewardsPoints) {
