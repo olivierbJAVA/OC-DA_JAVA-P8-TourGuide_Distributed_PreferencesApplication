@@ -83,7 +83,7 @@ In this file, you can manage the logging level and the sever listening port
 
 ### Endpoints
 
-The following EndPoints are exposed by the GPS Service :
+The following EndPoint is exposed by the Preferences Service :
 
 - GET  <http://localhost:8083/getPrice> : provide a list of proposed trip deals for a user depending on its travel preferences and rewards points
 >Request Parameters : *apiKey* = name of the API, *attractionId* = id, *adults* = number of adults, *children* = number of children, *nightsStay* = trip duration, *rewardsPoints* = number of rewards points
