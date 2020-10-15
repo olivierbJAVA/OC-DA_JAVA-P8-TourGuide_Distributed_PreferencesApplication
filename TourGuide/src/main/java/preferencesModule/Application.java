@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Locale;
 
+/**
+ * Class in charge of launching the Preferences service application.
+ */
 @SpringBootApplication
 public class Application {
 

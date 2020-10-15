@@ -11,6 +11,9 @@ import tripPricer.Provider;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Controller in charge of managing the endpoints for the Preferences service.
+ */
 @RestController
 public class PreferencesController {
     private Logger logger = LoggerFactory.getLogger(PreferencesController.class);
@@ -21,6 +24,17 @@ public class PreferencesController {
         this.preferencesService = preferencesService;
     }
 
+    /**
+     * Method managing the GET "/getPrice" endpoint HTTP request to get a list of travels proposed by external providers to the user depending on its preferences and rewards points.
+     *
+     * @param apiKey The apiKey of travel network
+     * @param attractionId The id
+     * @param adults The number of adults
+     * @param children The number of children
+     * @param nightsStay The number of nights stay
+     * @param rewardsPoints The number of rewards points
+     * @return The list of proposed travels by external providers to the user
+     */
     @GetMapping("/getPrice")
     public List<Provider> getPrice(@RequestParam String apiKey, @RequestParam String attractionId, @RequestParam int adults, @RequestParam int children, @RequestParam int nightsStay, @RequestParam int rewardsPoints) {
         logger.debug("Request getPrice : ApiKey=" + apiKey + " - attractionId=" + attractionId + " - adults=" + adults + " - children=" + children + " - nightsStay=" + nightsStay + " - rewardsPoints=" + rewardsPoints);
